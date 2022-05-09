@@ -1,27 +1,28 @@
 <template>
-  <router-view />
-  <el-button>哈哈哈哈</el-button>
+  <div class="app">
+    <el-config-provider :locale="zhCn">
+      <router-view></router-view>
+    </el-config-provider>
+  </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import { ElConfigProvider } from 'element-plus'
+import zhCn from 'element-plus/lib/locale/lang/zh-cn'
+import { defineComponent } from 'vue'
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default defineComponent({
+  components: { ElConfigProvider },
+  setup() {
+    return {
+      zhCn
     }
   }
+})
+</script>
+
+<style lang="less">
+.app {
+  height: 100%;
 }
 </style>
