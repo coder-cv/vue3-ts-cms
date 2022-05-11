@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios'
 import type { AxiosInstance } from 'axios'
-import type { HYRequestInterceptors, HYRequestConfig } from './type'
+import type { HTTPRequestInterceptors, HTTPRequestConfig } from './type'
 
 import { ElLoading } from 'element-plus'
 
@@ -8,11 +8,11 @@ const DEAFULT_LOADING = true
 
 class HttpRequest {
   instance: AxiosInstance
-  interceptors?: HYRequestInterceptors
+  interceptors?: HTTPRequestInterceptors
   showLoading: boolean
   loading?: any
 
-  constructor(config: HYRequestConfig) {
+  constructor(config: HTTPRequestConfig) {
     // 创建axios实例
     this.instance = axios.create(config)
 
@@ -73,7 +73,7 @@ class HttpRequest {
     )
   }
 
-  request<T>(config: HYRequestConfig): Promise<AxiosResponse> {
+  request<T>(config: HTTPRequestConfig): Promise<AxiosResponse> {
     return new Promise((resolve, reject) => {
       if (config.interceptors?.requestInterceptor) {
         config = config.interceptors.requestInterceptor(config)
@@ -109,19 +109,19 @@ class HttpRequest {
     })
   }
 
-  get<T>(config: HYRequestConfig): Promise<AxiosResponse> {
+  get<T>(config: HTTPRequestConfig): Promise<AxiosResponse> {
     return this.request<T>({ ...config, method: 'GET' })
   }
 
-  post<T>(config: HYRequestConfig): Promise<AxiosResponse> {
+  post<T>(config: HTTPRequestConfig): Promise<AxiosResponse> {
     return this.request<T>({ ...config, method: 'POST' })
   }
 
-  delete<T>(config: HYRequestConfig): Promise<AxiosResponse> {
+  delete<T>(config: HTTPRequestConfig): Promise<AxiosResponse> {
     return this.request<T>({ ...config, method: 'DELETE' })
   }
 
-  patch<T>(config: HYRequestConfig): Promise<AxiosResponse> {
+  patch<T>(config: HTTPRequestConfig): Promise<AxiosResponse> {
     return this.request<T>({ ...config, method: 'PATCH' })
   }
 }

@@ -23,7 +23,8 @@ module.exports = defineConfig({
   configureWebpack: {
     resolve: {
       alias: {
-        components: '@/components'
+        components: '@/components',
+        util: '@/utils'
       }
     },
     // plugins: [
