@@ -67,6 +67,7 @@ export default defineComponent({
 
 .title {
   text-align: center;
+  margin-bottom: 10px;
 }
 .login-panel > .el-tabs__content {
   padding: 32px;
