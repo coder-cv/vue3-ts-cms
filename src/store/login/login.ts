@@ -15,13 +15,22 @@ const loginModule: Module<ILoginState, IRootState> = {
   state() {
     return {
       token: '',
-      userInfo: ''
+      userInfo: {},
+      userMenus: {}
     }
   },
   getters: {},
   mutations: {
-    changeToken(state, token) {
+    changeToken(state, token: string) {
       state.token = token
+    },
+
+    changeUserInfo(state, userInfo) {
+      state.userInfo = userInfo
+    },
+
+    changeUserMenus(state, userMenus) {
+      state.userMenus = userMenus
     }
   },
   actions: {

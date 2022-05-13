@@ -1,6 +1,6 @@
 <template>
-  <div class="login-panel">
-    <h1 class="title">后台管理系统</h1>
+  <div class="w-80 mb-80">
+    <h1 class="font-black text-center mb-4">后台管理系统</h1>
     <el-tabs type="border-card" stretch :v-model="currentTab">
       <el-tab-pane>
         <template #label>
@@ -21,11 +21,11 @@
         <login-phone />
       </el-tab-pane>
     </el-tabs>
-    <div class="account-control">
+    <div class="flex justify-between mb-2">
       <el-checkbox v-model="isKeepPassword">记住密码</el-checkbox>
       <el-link type="primary">忘记密码</el-link>
     </div>
-    <el-button type="primary" class="login-btn" @click="loginClick"
+    <el-button type="primary" class="w-full" @click="loginClick"
       >立即登录</el-button
     >
   </div>
@@ -59,36 +59,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-.login-panel {
-  width: 280px;
-  margin-bottom: 400px;
-}
-
-.title {
-  text-align: center;
-  margin-bottom: 10px;
-}
-.login-panel > .el-tabs__content {
-  padding: 32px;
-  color: #6b778c;
-  font-size: 32px;
-  font-weight: 600;
-}
-.login-panel .custom-tabs-label .el-icon {
-  vertical-align: middle;
-}
-.login-panel .custom-tabs-label span {
-  vertical-align: middle;
-  margin-left: 4px;
-}
-.login-panel .account-control {
-  display: flex;
-  justify-content: space-between;
-}
-
-.login-panel .login-btn {
-  width: 100%;
-  margin-top: 5px;
-}
-</style>
+<style scoped></style>

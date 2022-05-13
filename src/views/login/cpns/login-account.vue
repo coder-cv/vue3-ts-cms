@@ -55,10 +55,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-.account-control {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-</style>
+<style scoped></style>

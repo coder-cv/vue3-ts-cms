@@ -5,8 +5,8 @@
         <el-input v-model="phone.num" />
       </el-form-item>
       <el-form-item label="验证码">
-        <template class="getCode">
-          <el-input v-model="phone.code" class="num" />
+        <template class="flex">
+          <el-input v-model="phone.code" class="mr-2" />
           <el-button type="primary">获取验证码</el-button>
         </template>
       </el-form-item>
@@ -30,12 +30,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-.getCode {
-  display: flex;
-}
-
-.getCode .num {
-  margin-right: 8px;
-}
-</style>
+<style scoped></style>
